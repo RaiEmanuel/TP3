@@ -25,9 +25,9 @@ id		{letra_}({letra_}|{digito})*
 "pow"               { return POW;}
 "if"                { return IF;}
 \"                  { BEGIN STRING;}
-<STRING>[^\"]*      { strcpy(texto, yytext);}
-<STRING>\"          { strcpy(yylval.string, "aaaa"); return STRING; BEGIN INITIAL;}
-[\t ]+		        { ; /* ignora espaço em branco */ }
+<STRING>[^\"]*      { strcpy(yylval.string, yytext);}
+<STRING>\"          { BEGIN INITIAL; return STRING;}
+[\t ]+		        { ;/* ignora espaço em branco */ }
 {numero}            { yylval.num = atof(yytext); return NUM; }
 {id}		        { strcpy(yylval.id, yytext); return ID; }
 .|\n		        { return yytext[0]; }

@@ -58,13 +58,13 @@ calc: ID '=' expr 							{ variables[$1] = $3; }
 												cout << $7 << " = " << variables[$7] << "\n";
 											  }
 											}
-	| PRINT '(' values ')'					{ }
-	| PRINT '(' STRING ')'					{ cout << "STRING = "<< "\n"; }
+	| IF '(' expr ')' PRINT '(' STRING ')'  { if($3){
+												cout << $7 << " = " << yylval.string << "\n";
+											  }
+											}
+	| PRINT '(' STRING ')'					{ cout << "STRING = " << yylval.string << "\n"; }
 	| PRINT '(' ID ')'						{ cout << $3 << " = " << variables[$3] << "\n"; }
 	; 
-
-values: expr ','' ' values  { cout << $1 << ", "; }
-	  | expr				{ cout << $1 << '\n'; }
 
 expr: expr '+' expr			{ $$ = $1 + $3; }
 	| expr '-' expr   		{ $$ = $1 - $3; }

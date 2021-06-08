@@ -811,17 +811,17 @@ case 6:
 /* rule 6 can match eol */
 YY_RULE_SETUP
 #line 28 "calc.l"
-{ strcpy(texto, yytext);}
+{ strcpy(yylval.string, yytext);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 29 "calc.l"
-{ strcpy(yylval.string, "aaaa"); return STRING; BEGIN INITIAL;}
+{ cout << "xxxxxx" << endl; BEGIN INITIAL; return STRING;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 30 "calc.l"
-{ ; /* ignora espaço em branco */ }
+{ ;/* ignora espaço em branco */ }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
