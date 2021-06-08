@@ -24,5 +24,31 @@ string
 unistd.h
 -
 
+/home/pi/Desktop/compiladores/Lab25/CalcPlus/Build/parser.cpp
+iostream
+-
+cstring
+-
+sstream
+-
+cmath
+-
+unordered_map
+-
+stddef.h
+-
+libintl.h
+-
+alloca.h
+-
+malloc.h
+-
+stdlib.h
+-
+stdlib.h
+-
+stdio.h
+-
+
 /home/pi/Desktop/compiladores/Lab25/CalcPlus/Build/parser.h
 

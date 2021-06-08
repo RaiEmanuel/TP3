@@ -498,7 +498,7 @@ char texto[100];
 #line 499 "/home/pi/Desktop/compiladores/Lab25/CalcPlus/Build/lexer.cpp"
 
 #define INITIAL 0
-#define STRING 1
+#define TEXT 1
 
 #ifndef YY_NO_UNISTD_H
 /* Special case for "unistd.h", since it is non-ANSI. We include it way
@@ -805,7 +805,7 @@ YY_RULE_SETUP
 case 5:
 YY_RULE_SETUP
 #line 27 "calc.l"
-{ BEGIN STRING;}
+{ BEGIN TEXT;}
 	YY_BREAK
 case 6:
 /* rule 6 can match eol */
@@ -816,7 +816,7 @@ YY_RULE_SETUP
 case 7:
 YY_RULE_SETUP
 #line 29 "calc.l"
-{ cout << "xxxxxx" << endl; BEGIN INITIAL; return STRING;}
+{ BEGIN INITIAL; return STRING;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
@@ -846,7 +846,7 @@ ECHO;
 	YY_BREAK
 #line 848 "/home/pi/Desktop/compiladores/Lab25/CalcPlus/Build/lexer.cpp"
 case YY_STATE_EOF(INITIAL):
-case YY_STATE_EOF(STRING):
+case YY_STATE_EOF(TEXT):
 	yyterminate();
 
 	case YY_END_OF_BUFFER:
